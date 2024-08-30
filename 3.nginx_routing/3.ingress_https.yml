@@ -52,7 +52,7 @@ spec:
   acme:
   # 인증서 서버 주소. 해당 서버의 리소스를 통해 인증서 발행
     server: https://acme-v02.api.letsencrypt.org/directory
-    email: helloworld@naver.com
+    email: jeongha61@naver.com
     privateKeySecretRef:
       name: letsencrypt-prod
     solvers:
@@ -64,10 +64,10 @@ spec:
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: kimseonguk-com-tls
+  name: junghahwang-com-tls
   namespace: natural
 spec: 
-  secretName: kimseonguk-com-tls
+  secretName: junghahwang-com-tls
   duration: 2160h #90일
   renewBefore: 360h #15일전에 갱신
   issuerRef:
@@ -91,7 +91,7 @@ spec:
   tls:
   - hosts:
     - "server.jungha.store"
-    secretName: kimseonguk-com-tls
+    secretName: junghahwang-com-tls
   rules:
   - host: server.jungha.store
     http:
