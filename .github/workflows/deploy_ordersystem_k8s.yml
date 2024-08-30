@@ -38,7 +38,7 @@ jobs:
           REPOSITORY: natural-ordersystem
         run: |
           docker build -t $REGISTRY/$REPOSITORY:latest \
-          -f ./ordersystem/Dockerfile ./ordersystem
+          -f ./k8s-practice/ordersystem/Dockerfile ./k8s-practice/ordersystem
           docker push $REGISTRY/$REPOSITORY:latest
 
           
