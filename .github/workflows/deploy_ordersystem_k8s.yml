@@ -26,5 +26,4 @@ jobs:
           aws-region: ap-northeast-2
       
       - name: update cluster information
-        run: aws eks update-kubeconfig --4team-cluster --region ap-northeast-2
-        
+        run: aws eks update-kubeconfig --name 4team-cluster --region ap-northeast-2
