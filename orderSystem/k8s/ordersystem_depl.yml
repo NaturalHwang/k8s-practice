@@ -25,7 +25,7 @@ spec:
               cpu: "1"
               memory: "500Mi"
           # 최소 할당량
-            request:
+            requests:
               cpu: "0.5"
               memory: "250Mi"
           env:
