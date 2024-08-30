@@ -41,4 +41,7 @@ jobs:
           -f ./orderSystem/Dockerfile ./orderSystem
           docker push $REGISTRY/$REPOSITORY:latest
 
-          
+      - name: eks kubectl apply
+        run: |
+          kubectl apply -f ./orderSystem/k8s/ordersystem_depl.yml
+          kubectl rollout restart deployment ordersystem-deployment -n natural
