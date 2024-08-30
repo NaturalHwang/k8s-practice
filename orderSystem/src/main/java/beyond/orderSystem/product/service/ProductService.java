@@ -58,7 +58,7 @@ public class ProductService {
             byte[] bytes = image.getBytes();
 //            Path path = Paths.get("C:/Users/jungh/OneDrive/Desktop/class/tmp/",
 //                    UUID.randomUUID() + "_" + image.getOriginalFilename()); // 난수값이라 파일 이름이 복잡
-            Path path = Paths.get("C:/Users/jungh/OneDrive/Desktop/class/tmp/",
+            Path path = Paths.get("/temp/",
                     product.getId() + "_" + image.getOriginalFilename());
             Files.write(path, bytes, StandardOpenOption.CREATE, StandardOpenOption.WRITE);
             product.updateImagePath(path.toString());
@@ -127,7 +127,7 @@ public class ProductService {
             product = productRepository.save(dto.toEntity());
             byte[] bytes = image.getBytes();
             String fileName = product.getId() + "_" + image.getOriginalFilename();
-            Path path = Paths.get("C:/Users/jungh/OneDrive/Desktop/class/tmp/",fileName);
+            Path path = Paths.get("/temp/",fileName);
 //            local pc에 임시 저장
             Files.write(path, bytes, StandardOpenOption.CREATE, StandardOpenOption.WRITE);
 
