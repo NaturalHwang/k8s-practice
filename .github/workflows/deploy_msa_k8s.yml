@@ -57,7 +57,7 @@ jobs:
 
       - name: eks kubectl apply
         run: |
-          kubectl apply -f ./msa/order/k8s/order_depl.yml
+          kubectl apply -f ./msa/ordering/k8s/order_depl.yml
           kubectl rollout restart deployment order-deployment -n natural
 
       - name: build and push docker product image to ecr
