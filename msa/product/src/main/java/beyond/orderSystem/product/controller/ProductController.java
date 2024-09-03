@@ -39,6 +39,7 @@ public class ProductController {
     @PostMapping("/product/create")
 //    public ResponseEntity<?> createProduct(@RequestBody ProductSaveReqDto dto){
     public ResponseEntity<?> createProduct(ProductSaveReqDto dto){
+        System.out.println(dto);
         Product product = productService.productAwsCreate(dto);
 //        Product product = productService.productCreate(dto);
         CommonResDto commonResDto = new CommonResDto(HttpStatus.CREATED, "products are Successly created", product);
