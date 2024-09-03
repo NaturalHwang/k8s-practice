@@ -52,7 +52,7 @@ jobs:
           REPOSITORY: natural-order
         run: |
           docker build -t $REGISTRY/$REPOSITORY:latest \
-          -f ./msa/order/Dockerfile ./msa/order
+          -f ./msa/order/Dockerfile ./msa/ordering
           docker push $REGISTRY/$REPOSITORY:latest
 
       - name: eks kubectl apply
