@@ -1,0 +1,39 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: order-msa-ingress
+  namespace: natural
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  tls:
+  - hosts:
+    - "server.jungha.store"
+    secretName: junghahwang-com-tls
+  rules:
+  - host: server.jungha.store
+    http:
+      paths:
+      - path: /member-service/(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: member-service
+            port:
+              number: 80
+      - path: /order-service/(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: order-service
+            port:
+              number: 80
+      - path: /product-service/(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: product-service
+            port:
+              number: 80
