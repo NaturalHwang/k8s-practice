@@ -29,9 +29,9 @@ logging:
 
 jwt:
   expiration: 30
-  secretKey: my_token_secret
+  secretKey: ${JWT_SECRET}
   expirationRt: 14400
-  secretKeyRt: hackerton_secret
+  secretKeyRt: ${JWT_SECRET_RT}
 
 # asw s3 설정
 cloud:
